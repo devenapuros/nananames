@@ -1,0 +1,19 @@
+.primary {
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.91rem;
+    font-weight: 600;
+    color: var(--title-color);
+    background-color: var(--primary-color);
+    border-radius: 9px;
+    border: 0;
+    /* border: 1px solid var(--title-color); */
+    /* box-shadow: 2px 2px 0px #111; */
+}
+
+.primary:hover {
+    cursor: pointer;
+}

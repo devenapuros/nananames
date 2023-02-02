@@ -1,0 +1,80 @@
+.main {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 3.7rem;
+    color: var(--title-color);
+    font-weight: 800;
+}
+
+.slogan {
+    color: var(--gray-color);
+    max-width: 500px;
+}
+
+.paragraph {
+    color: var(--text-color);
+}
+
+.cohere {
+    color: var(--text-color);
+    font-family: Times, serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.row {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.image {
+    color: var(--gray-color);
+    font-size: 0.83rem;
+}
+
+.button {
+    width: 22rem;
+}
+
+.section {
+    margin: 5.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.article {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    color: var(--gray-color);
+}
+
+.divider {
+    height: 11rem;
+    border-right: 1px solid #eee;
+}
+
+/* .article:not(:last-child) {
+    border-right: 1px solid #eee;
+} */
+
+.article h1 {
+    color: var(--title-color);
+    font-size: 1.1rem;
+}
+
+.article p {
+    color: var(--text-color);
+}
