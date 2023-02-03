@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    text-decoration: none;
+    color: var(--title-color);
 }
 
 .box {
@@ -10,7 +12,7 @@
     width: 2rem;
     background-color: var(--primary-color);
     /* border: 1px solid #eee; */
-    border-radius: 6px;
+    border-radius: 7px;
 }
 
 .brand {

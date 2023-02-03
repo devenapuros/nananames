@@ -28,6 +28,11 @@
     font-family: Times, serif;
     font-weight: 500;
     font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.cohere:hover {
+    text-decoration: underline var(--primary-color);
 }
 
 .row {
@@ -72,7 +77,7 @@
 
 .article h1 {
     color: var(--title-color);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .article p {

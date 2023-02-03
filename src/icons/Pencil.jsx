@@ -1,6 +1,4 @@
-import React from "react";
-
-export const ArrowRight = ({ size = 24, className }) => {
+export const Pencil = ({ size = 24, className }) => {
     return (
         <svg
             className={className}
@@ -14,8 +12,7 @@ export const ArrowRight = ({ size = 24, className }) => {
             strokeLinecap="round"
             strokeLinejoin="round"
         >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
         </svg>
     );
 };

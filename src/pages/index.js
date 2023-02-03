@@ -3,10 +3,11 @@ import { ArrowRight } from "@/icons/ArrowRight";
 import styles from "@/styles/home-page.module.css";
 import buttonStyle from "@/styles/button.module.css";
 import Image from "next/image";
-import { Lightbulb } from "@/icons/LightBulb";
+import { Lightbulb } from "@/icons/Lightbulb";
 import { Wrench } from "@/icons/Wrench";
 import { Github } from "@/icons/Github";
 import { Footer } from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -49,12 +50,18 @@ export default function Home() {
                     Artificial Intelligence
                 </h2>
                 <p className={styles.paragraph}>
-                    Powered by <span className={styles.cohere}>Co:here</span>
+                    Powered by{" "}
+                    <a className={styles.cohere} href="#">
+                        Co:here
+                    </a>
                 </p>
-                <button className={`${buttonStyle.primary} ${styles.button}`}>
+                <Link
+                    href="/generate"
+                    className={`primary-btn ${styles.button}`}
+                >
                     Start generating
-                    <ArrowRight size={22} />
-                </button>
+                    <ArrowRight size={22} className="icon" />
+                </Link>
             </main>
             <section className={styles.section}>
                 <article className={styles.article}>
@@ -80,7 +87,7 @@ export default function Home() {
                     <h1>Open source</h1>
                     <p>
                         NaNaNames is an open source project. You can find the
-                        source code at this Github repository
+                        source code at this Github repository.
                     </p>
                 </article>
             </section>

@@ -1,0 +1,14 @@
+.steps {
+    position: relative;
+    margin: 1rem 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    z-index: -1;
+}
