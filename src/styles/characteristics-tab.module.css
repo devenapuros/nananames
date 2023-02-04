@@ -23,8 +23,109 @@
 }
 
 .container {
+    margin: 0 auto;
+    width: 448px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
+}
+
+.ul {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+}
+
+.ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.ul li:last-child {
+    border-bottom: 0;
+}
+
+.ul span {
+    width: 100%;
+    min-width: 0;
+}
+
+.addBtn {
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.91rem;
+    font-weight: 600;
+    color: var(--gray-color);
+    background-color: transparent;
+    border-radius: 9px;
+    border: 2px dashed #aaa;
+    text-decoration: none;
+    width: 100%;
+    transition: background-color 200ms ease;
+}
+
+.addBtn:hover {
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.deleteBtn {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 4px;
+    color: var(--gray-color);
+    transition: background-color 200ms ease;
+}
+
+.deleteBtn:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card form input {
+    padding: 0.7rem 1.2rem;
+    color: var(--title-color);
+    font-size: 0.91rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.card form div {
+    margin-top: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card form div button {
+    width: 100%;
 }

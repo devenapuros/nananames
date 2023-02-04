@@ -14,7 +14,8 @@
     "next": "13.1.6",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "wc-toast": "^1.2.9"
   },
   "devDependencies": {
     "eslint": "^8.33.0",

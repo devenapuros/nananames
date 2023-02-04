@@ -14,7 +14,7 @@ export const PetTab = ({ formController }) => {
                         formController.setField("currentSelected", 1)
                     }
                 >
-                    Siguiente <ArrowRight size={20} className="icon" />
+                    Next <ArrowRight size={20} className="icon" />
                 </button>
             </header>
             <div className={styles.grid}>
@@ -31,8 +31,8 @@ export const PetTab = ({ formController }) => {
                         <Image
                             className={styles.image}
                             src={`/pets/${pet}.svg`}
-                            height={70}
-                            width={70}
+                            height={50}
+                            width={50}
                             alt={`${pet} pet`}
                         />
                         {pet}

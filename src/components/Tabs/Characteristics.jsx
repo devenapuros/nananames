@@ -1,5 +1,7 @@
 import { ArrowLeft } from "@/icons/ArrowLeft";
 import { ArrowRight } from "@/icons/ArrowRight";
+import { Close } from "@/icons/Close";
+import { Plus } from "@/icons/Plus";
 import styles from "@/styles/characteristics-tab.module.css";
 
 export const Characteristics = ({ formController }) => {
@@ -17,7 +19,7 @@ export const Characteristics = ({ formController }) => {
                         }
                     >
                         <ArrowLeft size={20} className="icon" />
-                        Anterior
+                        Go back
                     </button>
                     <button
                         className="primary-btn"
@@ -25,15 +27,48 @@ export const Characteristics = ({ formController }) => {
                             formController.setField("currentSelected", 2)
                         }
                     >
-                        Siguiente <ArrowRight size={20} className="icon" />
+                        Next <ArrowRight size={20} className="icon" />
                     </button>
                 </div>
             </header>
             <div className={styles.container}>
-                <ul>
-                    <li>Strong legs</li>
-                    <li>Two horns</li>
+                <ul className={styles.ul}>
+                    <li>
+                        <span>Strong legs</span>
+                        <button className={styles.deleteBtn}>
+                            <Close size={16} />
+                        </button>
+                    </li>
+                    <li>
+                        <span>Strong legs</span>
+                        <button className={styles.deleteBtn}>
+                            <Close size={16} />
+                        </button>
+                    </li>
                 </ul>
+                <button className={styles.addBtn}>
+                    Add
+                    <Plus size={18} />
+                </button>
+                <div className={styles.card}>
+                    <form>
+                        <label htmlFor="">
+                            Add characteristic in a short phrase:
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Example: Spots all over the body"
+                        />
+                        <div>
+                            <button type="button" className="secondary-btn">
+                                Cancel
+                            </button>
+                            <button type="submit" className="primary-btn">
+                                Add
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

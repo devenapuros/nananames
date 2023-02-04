@@ -5,6 +5,7 @@ import { StepItem } from "@/components/StepItem";
 import { Steps } from "@/components/Steps";
 import { Characteristics } from "@/components/Tabs/Characteristics";
 import { PetTab } from "@/components/Tabs/PetTab";
+import { ResultsTab } from "@/components/Tabs/ResultsTab";
 import { Topbar } from "@/components/Topbar";
 import { useForm } from "@/hooks/useForm";
 import { Dog } from "@/icons/Dog";
@@ -56,16 +57,7 @@ export default function Home() {
                         <Characteristics formController={formController} />
                     </CarouselItem>
                     <CarouselItem>
-                        <h1>Pick the perfect name</h1>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quia praesentium incidunt sit
-                                nemo velit magni natus modi optio provident
-                                ullam itaque illo numquam exercitationem totam
-                                neque sunt, eum, voluptates voluptate!
-                            </p>
-                        </div>
+                        <ResultsTab formController={formController} />
                     </CarouselItem>
                 </Carousel>
             </section>
