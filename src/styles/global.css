@@ -83,7 +83,7 @@ body {
 }
 
 .secondary-btn:hover .icon {
-    transform: translateX(0.5rem);
+    transform: translateX(-0.5rem);
 }
 
 .text-muted {
