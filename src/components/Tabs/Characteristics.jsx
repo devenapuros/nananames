@@ -53,7 +53,7 @@ export const Characteristics = ({ formController }) => {
                 <div className={styles.card}>
                     <form>
                         <label htmlFor="">
-                            Add characteristic in a short phrase:
+                            Add a characteristic in a short phrase:
                         </label>
                         <input
                             type="text"

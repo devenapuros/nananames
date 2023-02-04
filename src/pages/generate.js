@@ -11,6 +11,7 @@ import { useForm } from "@/hooks/useForm";
 import { Dog } from "@/icons/Dog";
 import { Pencil } from "@/icons/Pencil";
 import { Pointer } from "@/icons/Pointer";
+import { Toaster } from "react-hot-toast";
 
 const initialForm = {
     currentSelected: 0,
@@ -22,6 +23,7 @@ export default function Home() {
     const formController = useForm(initialForm);
     return (
         <>
+            <Toaster />
             <Topbar />
             <section>
                 <Steps>

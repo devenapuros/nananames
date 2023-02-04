@@ -56,7 +56,7 @@ body {
 }
 
 .primary-btn:hover .icon {
-    transform: translateX(0.5rem);
+    transform: translateX(0.35rem);
 }
 
 .secondary-btn {
@@ -83,7 +83,7 @@ body {
 }
 
 .secondary-btn:hover .icon {
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.35rem);
 }
 
 .text-muted {

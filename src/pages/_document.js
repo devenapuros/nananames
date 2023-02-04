@@ -13,6 +13,7 @@ export default function Document() {
                     content="width=device-width, initial-scale=1"
                 />
                 <link rel="icon" href="/favicon.ico" />
+                <title>NaNaNames - Generate pet names using AI</title>
             </Head>
             <body>
                 <Main />

@@ -1,9 +1,14 @@
 import { ArrowLeft } from "@/icons/ArrowLeft";
+import { Bot } from "@/icons/Bot";
 import styles from "@/styles/results-tab.module.css";
+import confetti from "canvas-confetti";
+import toast from "react-hot-toast";
+import { Spinner } from "../Spinner";
+import { useState } from "react";
 
 const names = [
     "Coco",
-    "Fisgon",
+    "Fisgón",
     "Firulais",
     "Oreo",
     "Scrappy",
@@ -13,10 +18,34 @@ const names = [
     "Nueve",
     "Diez",
     "Once",
-    "Doce"
+    "Doce",
 ];
 
 export const ResultsTab = ({ formController }) => {
+    const [loading, setLoading] = useState(false);
+    const copyName = async (name) => {
+        try {
+            await navigator.clipboard.writeText(name);
+            toast.success("Name copied to clipboard!", {
+                position: "bottom-center",
+                style: {
+                    background: "#222",
+                    color: "#eee",
+                },
+            });
+            confetti({ particleCount: 100, spread: 70, origin: { y: 1.0 } });
+        } catch (error) {
+            console.log(error);
+            toast.error("Cannot copy name to clipboard", {
+                position: "bottom-center",
+                style: {
+                    background: "#222",
+                    color: "#eee",
+                },
+            });
+        }
+    };
+
     return (
         <div className={styles.article}>
             <header className={styles.row}>
@@ -33,13 +62,26 @@ export const ResultsTab = ({ formController }) => {
                     </button>
                 </div>
             </header>
-            <div className={styles.grid}>
-                {names.map((name) => (
-                    <div key={name} className={styles.card}>
-                        {name}
-                    </div>
-                ))}
-            </div>
+            {loading && (
+                <div className={styles.loadingContainer}>
+                    <Bot size={64} />
+                    <Spinner />
+                    <p>The AI is doing its magic...</p>
+                </div>
+            )}
+            {!loading && (
+                <div className={styles.grid}>
+                    {names.map((name) => (
+                        <div
+                            key={name}
+                            className={styles.card}
+                            onClick={() => copyName(name)}
+                        >
+                            {name}
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
