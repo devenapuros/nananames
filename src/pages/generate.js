@@ -19,7 +19,7 @@ const initialForm = {
     characteristics: [],
 };
 
-export default function Home() {
+export default function Contribute() {
     const formController = useForm(initialForm);
     return (
         <>

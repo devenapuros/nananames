@@ -1,10 +1,10 @@
-import { ArrowLeft } from "@/icons/ArrowLeft";
-import { Bot } from "@/icons/Bot";
-import styles from "@/styles/results-tab.module.css";
+import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
 import toast from "react-hot-toast";
+import { Bot } from "@/icons/Bot";
+import { ArrowLeft } from "@/icons/ArrowLeft";
 import { Spinner } from "../Spinner";
-import { useState } from "react";
+import styles from "@/styles/results-tab.module.css";
 
 const names = [
     "Coco",
@@ -22,7 +22,18 @@ const names = [
 ];
 
 export const ResultsTab = ({ formController }) => {
-    const [loading, setLoading] = useState(false);
+    const [load, setLoad] = useState(false);
+
+    useEffect(() => {
+        console.log(formController);
+        if (formController.fields.currentSelected === 2) {
+            setLoad(true);
+            setTimeout(() => {
+                setLoad(false);
+            }, 5000);
+        }
+    }, [formController.fields.currentSelected]);
+
     const copyName = async (name) => {
         try {
             await navigator.clipboard.writeText(name);
@@ -62,14 +73,14 @@ export const ResultsTab = ({ formController }) => {
                     </button>
                 </div>
             </header>
-            {loading && (
+            {load && (
                 <div className={styles.loadingContainer}>
                     <Bot size={64} />
                     <Spinner />
                     <p>The AI is doing its magic...</p>
                 </div>
             )}
-            {!loading && (
+            {!load && (
                 <div className={styles.grid}>
                     {names.map((name) => (
                         <div
