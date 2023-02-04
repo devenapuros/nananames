@@ -2,11 +2,10 @@
     margin-bottom: 5rem;
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     overflow: hidden;
     width: 100%;
-    height: fit-content;
+    max-width: 768px;
 }
 
 .viewport {
@@ -15,7 +14,5 @@
     height: fit-content;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    transition: all 300ms ease;
+    transition: all 200ms ease;
 }
-
-/* transform: translateX( calc(${({ slideDistance }) => slideDistance || "0"} * -100%)); */

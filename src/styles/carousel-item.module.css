@@ -1,5 +1,9 @@
 .item {
-    flex: 0 0 100%;
-    gap: 0;
+    position: relative;
+    display: flex;
     width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    max-width: 768px;
 }

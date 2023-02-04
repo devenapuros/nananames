@@ -33,7 +33,7 @@ body {
 /* REUSABLE CLASSES */
 
 .primary-btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,33 @@ body {
 }
 
 .primary-btn:hover .icon {
+    transform: translateX(0.5rem);
+}
+
+.secondary-btn {
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.91rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: #eee;
+    border-radius: 9px;
+    border: 0;
+    text-decoration: none;
+}
+
+.secondary-btn:hover {
+    cursor: pointer;
+}
+
+.secondary-btn .icon {
+    transition: transform 200ms ease;
+}
+
+.secondary-btn:hover .icon {
     transform: translateX(0.5rem);
 }
 
