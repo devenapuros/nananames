@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "13.1.6",
     "canvas-confetti": "^1.6.0",
+    "cohere-ai": "^5.0.2",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "nprogress": "^0.2.0",

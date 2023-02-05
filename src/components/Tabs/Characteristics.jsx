@@ -1,3 +1,4 @@
+import { useForm } from "@/hooks/useForm";
 import { ArrowLeft } from "@/icons/ArrowLeft";
 import { ArrowRight } from "@/icons/ArrowRight";
 import { Close } from "@/icons/Close";
@@ -5,22 +6,36 @@ import { Plus } from "@/icons/Plus";
 import styles from "@/styles/characteristics-tab.module.css";
 import { useState } from "react";
 
+const initialDialog = {
+    characteristic: "",
+};
+
 export const Characteristics = ({ formController }) => {
     const [showDialog, setShowDialog] = useState(false);
     const setNextTab = () => formController.setField("currentSelected", 2);
+    const dialogForm = useForm(initialDialog);
 
     const addCharacteristic = (event) => {
         event.preventDefault();
-        console.log(event);
-        // const newItem = {
-        //     id: Math.floor(Math.random() * Date.now()),
-        //     content: event.,
-        // };
-        // formController.setField("characteristics", [
-        //     ...formController.fields.characteristics,
-        //     newItem,
-        // ]);
-        // setShowDialog(false);
+        if (!dialogForm.fields.characteristic) return;
+        const newItem = {
+            id: Math.floor(Math.random() * Date.now()),
+            content: dialogForm.fields.characteristic,
+        };
+        formController.setField("characteristics", [
+            ...formController.fields.characteristics,
+            newItem,
+        ]);
+        setShowDialog(false);
+        dialogForm.reset();
+    };
+
+    const deleteCharacteristic = (id) => {
+        const new_characteristics =
+            formController.fields.characteristics.filter(
+                (item) => item.id !== id
+            );
+        formController.setField("characteristics", new_characteristics);
     };
 
     return (
@@ -40,7 +55,10 @@ export const Characteristics = ({ formController }) => {
                         Go back
                     </button>
                     <button className="primary-btn" onClick={setNextTab}>
-                        Next <ArrowRight size={20} className="icon" />
+                        {formController.fields.characteristics.length > 0
+                            ? "Next"
+                            : "skip"}
+                        <ArrowRight size={20} className="icon" />
                     </button>
                 </div>
             </header>
@@ -50,7 +68,12 @@ export const Characteristics = ({ formController }) => {
                         {formController.fields.characteristics.map((item) => (
                             <li key={item.id}>
                                 <span>{item.content}</span>
-                                <button className={styles.deleteBtn}>
+                                <button
+                                    className={styles.deleteBtn}
+                                    onClick={() =>
+                                        deleteCharacteristic(item.id)
+                                    }
+                                >
                                     <Close size={16} />
                                 </button>
                             </li>
@@ -76,6 +99,13 @@ export const Characteristics = ({ formController }) => {
                                 type="text"
                                 name="characteristic"
                                 placeholder="Example: Spots all over the body"
+                                value={dialogForm.fields.characteristic}
+                                onChange={(event) =>
+                                    dialogForm.setField(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 autoFocus
                             />
                             <div>
@@ -86,7 +116,15 @@ export const Characteristics = ({ formController }) => {
                                 >
                                     Cancel
                                 </button>
-                                <button type="submit" className="primary-btn">
+                                <button
+                                    type="submit"
+                                    className="primary-btn"
+                                    disabled={
+                                        dialogForm.fields.characteristic
+                                            ? false
+                                            : true
+                                    }
+                                >
                                     Add
                                 </button>
                             </div>

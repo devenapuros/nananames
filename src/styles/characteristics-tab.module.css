@@ -119,6 +119,11 @@
     width: 100%;
 }
 
+.card form input:focus {
+    border: 1px solid var(--text-color);
+    outline: 1px solid var(--text-color);
+}
+
 .card form div {
     margin-top: 0.7rem;
     display: flex;

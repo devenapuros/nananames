@@ -59,6 +59,11 @@ body {
     transform: translateX(0.35rem);
 }
 
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .secondary-btn {
     padding: 0.8rem 1.2rem;
     display: flex;
@@ -84,6 +89,11 @@ body {
 
 .secondary-btn:hover .icon {
     transform: translateX(-0.35rem);
+}
+
+.secondary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .text-muted {

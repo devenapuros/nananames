@@ -13,6 +13,7 @@ export const PetTab = ({ formController }) => {
                     onClick={() =>
                         formController.setField("currentSelected", 1)
                     }
+                    disabled={formController.fields.pet ? false : true}
                 >
                     Next <ArrowRight size={20} className="icon" />
                 </button>

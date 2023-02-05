@@ -25,12 +25,23 @@ export const ResultsTab = ({ formController }) => {
     const [load, setLoad] = useState(false);
 
     useEffect(() => {
-        console.log(formController);
         if (formController.fields.currentSelected === 2) {
             setLoad(true);
-            setTimeout(() => {
-                setLoad(false);
-            }, 5000);
+            fetch("http://localhost:3000/api/generate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    pet: formController.fields.pet,
+                    characteristics: formController.fields.characteristics,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    setLoad(false);
+                });
         }
     }, [formController.fields.currentSelected]);
 
@@ -64,12 +75,11 @@ export const ResultsTab = ({ formController }) => {
                 <div className={styles.buttonGroup}>
                     <button
                         className="secondary-btn"
-                        onClick={() =>
-                            formController.setField("currentSelected", 0)
-                        }
+                        onClick={() => formController.reset()}
+                        disabled={load}
                     >
                         <ArrowLeft size={20} className="icon" />
-                        Reconfigure
+                        Retry
                     </button>
                 </div>
             </header>
@@ -77,7 +87,7 @@ export const ResultsTab = ({ formController }) => {
                 <div className={styles.loadingContainer}>
                     <Bot size={64} />
                     <Spinner />
-                    <p>The AI is doing its magic...</p>
+                    <p>Generating...</p>
                 </div>
             )}
             {!load && (
