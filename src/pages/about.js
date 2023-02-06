@@ -57,7 +57,7 @@ export default function Home() {
                         </li>
                         <li>
                             <a
-                                href="https://instagram.com/devenapuros"
+                                href="https://twitter.com/devenapuros"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -67,7 +67,7 @@ export default function Home() {
                         </li>
                         <li>
                             <a
-                                href="https://twitter.com/devenapuros"
+                                href="https://instagram.com/devenapuros"
                                 target="_blank"
                                 rel="noreferrer"
                             >
