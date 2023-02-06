@@ -38,7 +38,7 @@ export const ResultsTab = ({ formController }) => {
                         setNames(data.names);
                     }
                 })
-                .catch((error) => {
+                .catch(() => {
                     setLoad(false);
                 });
         }
