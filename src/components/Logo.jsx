@@ -10,6 +10,7 @@ export const Logo = () => {
                 height={40}
                 width={40}
                 style={{ borderRadius: "12px" }}
+                alt="NaNaNames logo"
             />
             <h1 className={styles.brand}>
                 <span>NaNa</span>Names

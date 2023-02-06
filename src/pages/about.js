@@ -17,6 +17,7 @@ export default function Home() {
                     height={100}
                     width={100}
                     style={{ borderRadius: "24px" }}
+                    alt="NaNaNames logo"
                 />
                 <div className={styles.container}>
                     <h1>About</h1>
@@ -24,7 +25,7 @@ export default function Home() {
                         This project was developed to participate in the
                         hackathon organized by{" "}
                         <strong>
-                            <ExternalLink href="#">
+                            <ExternalLink href="https://github.com/midudev">
                                 Miguel Ángel Durán (Midudev)
                             </ExternalLink>
                         </strong>

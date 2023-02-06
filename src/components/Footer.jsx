@@ -20,8 +20,8 @@ export const Footer = () => {
             </section>
             <section className={styles.footerSection}>
                 <ul className={styles.footerLinks}>
-                    <NextLink>Home</NextLink>
-                    <NextLink>About</NextLink>
+                    <NextLink href="/">Home</NextLink>
+                    <NextLink href="/about">About</NextLink>
 
                     <ExternalLink href="https://github.com/devenapuros/hack4tools">
                         Github

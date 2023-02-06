@@ -8,6 +8,9 @@ import styles from "@/styles/results-tab.module.css";
 import Image from "next/image";
 import { Sad } from "@/icons/Sad";
 
+const API_URL = "https://nananames.vercel.app";
+// const API_URL = "http://localhost:3000";
+
 export const ResultsTab = ({ formController }) => {
     const [load, setLoad] = useState(false);
     const [names, setNames] = useState([]);
@@ -15,7 +18,8 @@ export const ResultsTab = ({ formController }) => {
     useEffect(() => {
         if (formController.fields.currentSelected === 2) {
             setLoad(true);
-            fetch("http://localhost:3000/api/generate", {
+
+            fetch(`${API_URL}/api/generate`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -29,11 +33,13 @@ export const ResultsTab = ({ formController }) => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    // console.log(data);
                     setLoad(false);
                     if (data.names && data.names instanceof Array) {
                         setNames(data.names);
                     }
+                })
+                .catch((error) => {
+                    setLoad(false);
                 });
         }
     }, [formController.fields.currentSelected]);
