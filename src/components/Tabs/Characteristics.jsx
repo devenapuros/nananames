@@ -4,6 +4,7 @@ import { ArrowRight } from "@/icons/ArrowRight";
 import { Close } from "@/icons/Close";
 import { Plus } from "@/icons/Plus";
 import styles from "@/styles/characteristics-tab.module.css";
+import Image from "next/image";
 import { useState } from "react";
 
 const initialDialog = {
@@ -42,7 +43,14 @@ export const Characteristics = ({ formController }) => {
         <div className={styles.article}>
             <header className={styles.row}>
                 <h1>
-                    Add your {formController.fields.pet}&apos;s characteristics
+                    Add your {formController.fields.pet}&apos;s{" "}
+                    <Image
+                        src={`/pets/${formController.fields.pet}.svg`}
+                        height={35}
+                        width={35}
+                        alt={`${formController.fields.pet} pet.`}
+                    />{" "}
+                    characteristics
                 </h1>
                 <div className={styles.buttonGroup}>
                     <button
@@ -57,7 +65,7 @@ export const Characteristics = ({ formController }) => {
                     <button className="primary-btn" onClick={setNextTab}>
                         {formController.fields.characteristics.length > 0
                             ? "Next"
-                            : "skip"}
+                            : "Skip"}
                         <ArrowRight size={20} className="icon" />
                     </button>
                 </div>

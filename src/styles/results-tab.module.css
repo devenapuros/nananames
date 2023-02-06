@@ -13,6 +13,9 @@
 }
 
 .row h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.3rem;
 }
 
@@ -28,6 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 0.5rem;
     background-color: white;
     border: 1px solid #ddd;
@@ -58,4 +62,8 @@
     align-items: center;
     gap: 1rem;
     color: var(--gray-color);
+}
+
+.loadingContainer p {
+    text-align: center;
 }

@@ -1,0 +1,51 @@
+.section {
+    margin: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section h1 {
+    font-size: 1.7rem;
+    color: var(--title-color);
+}
+
+.section h2 {
+    font-size: 1.15rem;
+    color: var(--title-color);
+}
+
+.section p {
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.section a {
+    display: inline;
+}
+
+.section ul {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.section ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--title-color);
+}
+
+.section ul li a:hover {
+    text-decoration: underline var(--primary-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

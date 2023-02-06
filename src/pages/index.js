@@ -1,13 +1,14 @@
 import { Topbar } from "@/components/Topbar";
 import { ArrowRight } from "@/icons/ArrowRight";
 import styles from "@/styles/home-page.module.css";
-import buttonStyle from "@/styles/button.module.css";
+
 import Image from "next/image";
 import { Lightbulb } from "@/icons/Lightbulb";
 import { Wrench } from "@/icons/Wrench";
 import { Github } from "@/icons/Github";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
+import { ExternalLink } from "@/components/ExternalLink";
 
 export default function Home() {
     return (
@@ -51,7 +52,12 @@ export default function Home() {
                 </h2>
                 <p className={styles.paragraph}>
                     Powered by{" "}
-                    <a className={styles.cohere} href="#">
+                    <a
+                        className={styles.cohere}
+                        href="https://midu.link/ia"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         Co:here
                     </a>
                 </p>
@@ -87,7 +93,13 @@ export default function Home() {
                     <h1>Open source</h1>
                     <p>
                         NaNaNames is an open source project. You can find the
-                        source code at this Github repository.
+                        source code at this{" "}
+                        <i>
+                            {" "}
+                            <ExternalLink href="https://github.com/devenapuros/nananames">
+                                Github repository.
+                            </ExternalLink>
+                        </i>
                     </p>
                 </article>
             </section>

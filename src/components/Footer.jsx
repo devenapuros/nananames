@@ -11,7 +11,12 @@ export const Footer = () => {
                 <Logo />
             </section>
             <section className={styles.footerSection}>
-                Developed by Devenapuros 🚀
+                <p>
+                    Developed by{" "}
+                    <ExternalLink href="https://github.com/devenapuros">
+                        Devenapuros 🚀
+                    </ExternalLink>
+                </p>
             </section>
             <section className={styles.footerSection}>
                 <ul className={styles.footerLinks}>

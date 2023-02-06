@@ -5,24 +5,12 @@ import { Bot } from "@/icons/Bot";
 import { ArrowLeft } from "@/icons/ArrowLeft";
 import { Spinner } from "../Spinner";
 import styles from "@/styles/results-tab.module.css";
-
-const names = [
-    "Coco",
-    "Fisgón",
-    "Firulais",
-    "Oreo",
-    "Scrappy",
-    "Huesos",
-    "Max",
-    "Minny",
-    "Nueve",
-    "Diez",
-    "Once",
-    "Doce",
-];
+import Image from "next/image";
+import { Sad } from "@/icons/Sad";
 
 export const ResultsTab = ({ formController }) => {
     const [load, setLoad] = useState(false);
+    const [names, setNames] = useState([]);
 
     useEffect(() => {
         if (formController.fields.currentSelected === 2) {
@@ -34,13 +22,18 @@ export const ResultsTab = ({ formController }) => {
                 },
                 body: JSON.stringify({
                     pet: formController.fields.pet,
-                    characteristics: formController.fields.characteristics,
+                    characteristics: formController.fields.characteristics.map(
+                        (item) => item.content
+                    ),
                 }),
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
+                    // console.log(data);
                     setLoad(false);
+                    if (data.names && data.names instanceof Array) {
+                        setNames(data.names);
+                    }
                 });
         }
     }, [formController.fields.currentSelected]);
@@ -71,15 +64,25 @@ export const ResultsTab = ({ formController }) => {
     return (
         <div className={styles.article}>
             <header className={styles.row}>
-                <h1>Pick the perfect name</h1>
+                <h1>
+                    Pick the perfect name for your {formController.fields.pet}
+                    <Image
+                        src={`/pets/${formController.fields.pet}.svg`}
+                        height={40}
+                        width={40}
+                        alt={`${formController.fields.pet} pet.`}
+                    />
+                </h1>
                 <div className={styles.buttonGroup}>
                     <button
                         className="secondary-btn"
-                        onClick={() => formController.reset()}
+                        onClick={() =>
+                            formController.setField("currentSelected", 0)
+                        }
                         disabled={load}
                     >
                         <ArrowLeft size={20} className="icon" />
-                        Retry
+                        Reconfigure
                     </button>
                 </div>
             </header>
@@ -87,20 +90,36 @@ export const ResultsTab = ({ formController }) => {
                 <div className={styles.loadingContainer}>
                     <Bot size={64} />
                     <Spinner />
-                    <p>Generating...</p>
+                    <p>
+                        Generating...
+                        <br />
+                        Please be patient, this may take a few minutes.
+                    </p>
                 </div>
             )}
             {!load && (
                 <div className={styles.grid}>
-                    {names.map((name) => (
-                        <div
-                            key={name}
-                            className={styles.card}
-                            onClick={() => copyName(name)}
-                        >
-                            {name}
-                        </div>
-                    ))}
+                    {names &&
+                        names.length > 0 &&
+                        names.map((name) => (
+                            <div
+                                key={name}
+                                className={styles.card}
+                                onClick={() => copyName(name)}
+                            >
+                                {name}
+                            </div>
+                        ))}
+                </div>
+            )}
+            {!load && (!names || names.length === 0) && (
+                <div className={styles.loadingContainer}>
+                    <Sad size={64} />
+                    <p>
+                        Sorry, it seems that the AI is a bit lazy today.
+                        <br />
+                        Please click Retry button to generate new names.
+                    </p>
                 </div>
             )}
         </div>

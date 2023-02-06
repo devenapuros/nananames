@@ -1,10 +1,12 @@
 .link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.42rem;
     color: var(--text-color);
     text-decoration: none;
     transition: color 200ms ease;
+    word-wrap: break-word;
+    flex-wrap: wrap;
 }
 
 .link:hover {
