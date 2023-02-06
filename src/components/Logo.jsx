@@ -11,6 +11,7 @@ export const Logo = () => {
                 width={40}
                 style={{ borderRadius: "12px" }}
                 alt="NaNaNames logo"
+                loading="lazy"
             />
             <h1 className={styles.brand}>
                 <span>NaNa</span>Names

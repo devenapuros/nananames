@@ -49,6 +49,7 @@ export const Characteristics = ({ formController }) => {
                         height={35}
                         width={35}
                         alt={`${formController.fields.pet} pet.`}
+                        loading="lazy"
                     />{" "}
                     characteristics
                 </h1>

@@ -18,6 +18,7 @@ export default function Home() {
                     width={100}
                     style={{ borderRadius: "24px" }}
                     alt="NaNaNames logo"
+                    loading="lazy"
                 />
                 <div className={styles.container}>
                     <h1>About</h1>

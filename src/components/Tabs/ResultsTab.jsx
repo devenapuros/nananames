@@ -77,6 +77,7 @@ export const ResultsTab = ({ formController }) => {
                         height={40}
                         width={40}
                         alt={`${formController.fields.pet} pet.`}
+                        loading="lazy"
                     />
                 </h1>
                 <div className={styles.buttonGroup}>

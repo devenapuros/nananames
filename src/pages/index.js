@@ -22,6 +22,7 @@ export default function Home() {
                         height={90}
                         width={90}
                         alt="Frog pet"
+                        loading="lazy"
                     />
                     <Image
                         className={styles.image}
@@ -29,6 +30,7 @@ export default function Home() {
                         height={90}
                         width={90}
                         alt="Frog pet"
+                        loading="lazy"
                     />
                     <Image
                         className={styles.image}
@@ -36,6 +38,7 @@ export default function Home() {
                         height={90}
                         width={90}
                         alt="Frog pet"
+                        loading="lazy"
                     />
                     <Image
                         className={styles.image}
@@ -43,6 +46,7 @@ export default function Home() {
                         height={90}
                         width={90}
                         alt="Frog pet"
+                        loading="lazy"
                     />
                 </div>
                 <h1 className={styles.title}>Pet Name Generator</h1>
