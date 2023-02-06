@@ -16,9 +16,9 @@ module.exports = {
     },
     plugins: ["react"],
     rules: {
-        indent: ["error", 4],
-        quotes: ["error", "double"],
-        semi: ["error", "always"],
+        indent: ["warn", 4],
+        quotes: ["warn", "double"],
+        semi: ["warn", "always"],
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off",
         "no-unused-vars": "warn",
