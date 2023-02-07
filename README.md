@@ -6,7 +6,7 @@
 </h1>
 <p align="center"><i>Generate funny, catchy pet names using AI</i></p>
 <p align="center">
-    <a href="#">Go to website</a>&nbsp;
+    <a href="https://nananames.vercel.app">Go to website</a>&nbsp;
     ·
     &nbsp;<a href="https://github.com/devenapuros/nananames/issues">Report Bug</a>
   </p>
