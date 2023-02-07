@@ -7,8 +7,9 @@ import { Spinner } from "../Spinner";
 import styles from "@/styles/results-tab.module.css";
 import Image from "next/image";
 import { Sad } from "@/icons/Sad";
+import { generateNames } from "@/services/generateNames";
 
-const API_URL = "https://nananames.vercel.app";
+// const API_URL = "https://nananames.vercel.app";
 // const API_URL = "http://localhost:3000";
 
 export const ResultsTab = ({ formController }) => {
@@ -17,30 +18,25 @@ export const ResultsTab = ({ formController }) => {
 
     useEffect(() => {
         if (formController.fields.currentSelected === 2) {
-            setLoad(true);
-
-            fetch(`${API_URL}/api/generate`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    pet: formController.fields.pet,
-                    characteristics: formController.fields.characteristics.map(
-                        (item) => item.content
-                    ),
-                }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    setLoad(false);
-                    if (data.names && data.names instanceof Array) {
-                        setNames(data.names);
+            const getData = async () => {
+                setLoad(true);
+                try {
+                    let names = await generateNames(
+                        formController.fields.pet,
+                        formController.fields.characteristics.map(
+                            (item) => item.content
+                        )
+                    );
+                    if (names.length > 0) {
+                        setLoad(false);
+                        setNames(names);
                     }
-                })
-                .catch(() => {
+                } catch (error) {
+                    console.log(error);
                     setLoad(false);
-                });
+                }
+            };
+            getData();
         }
     }, [formController.fields.currentSelected]);
 

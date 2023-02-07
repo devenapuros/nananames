@@ -30,6 +30,7 @@ export default async function handler(req, res) {
         return_likelihoods: "NONE",
     });
     const names_string = response.body.generations[0].text;
+    console.log(names_string);
     let names_array = names_string.split("\n");
     names_array = names_array.map((name) => {
         var match = name.match(/\d+\.(.*)/);
