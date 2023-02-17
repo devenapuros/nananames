@@ -91,8 +91,7 @@ export const ResultsTab = ({ formController }) => {
             </header>
             {load && (
                 <div className={styles.loadingContainer}>
-                    <Bot size={64} />
-                    <Spinner />
+                    <Image src="/load.gif" height={113} width={150} />
                     <p>
                         Generating...
                         <br />

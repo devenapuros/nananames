@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
                 <h1 className={styles.title}>Pet Name Generator</h1>
                 <h2 className={styles.slogan}>
-                    Generate funny and customizable name for your pet using
+                    Generate funny and catchy names for your pet using
                     Artificial Intelligence
                 </h2>
                 <p className={styles.paragraph}>
