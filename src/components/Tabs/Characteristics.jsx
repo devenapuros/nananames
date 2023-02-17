@@ -59,11 +59,16 @@ export const Characteristics = ({ formController }) => {
                         onClick={() =>
                             formController.setField("currentSelected", 0)
                         }
+                        disabled={formController.fields.currentSelected !== 1}
                     >
                         <ArrowLeft size={20} className="icon" />
                         Go back
                     </button>
-                    <button className="primary-btn" onClick={setNextTab}>
+                    <button
+                        className="primary-btn"
+                        onClick={setNextTab}
+                        disabled={formController.fields.currentSelected !== 1}
+                    >
                         {formController.fields.characteristics.length > 0
                             ? "Next"
                             : "Skip"}
@@ -93,6 +98,7 @@ export const Characteristics = ({ formController }) => {
                     <button
                         className={styles.addBtn}
                         onClick={() => setShowDialog(true)}
+                        disabled={formController.fields.currentSelected !== 1}
                     >
                         Add
                         <Plus size={18} />

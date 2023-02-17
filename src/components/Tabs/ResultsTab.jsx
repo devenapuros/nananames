@@ -82,7 +82,9 @@ export const ResultsTab = ({ formController }) => {
                         onClick={() =>
                             formController.setField("currentSelected", 0)
                         }
-                        disabled={load}
+                        disabled={
+                            load || formController.fields.currentSelected !== 2
+                        }
                     >
                         <ArrowLeft size={20} className="icon" />
                         Reconfigure

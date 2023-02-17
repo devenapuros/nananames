@@ -20,7 +20,7 @@ export const PetTab = ({ formController }) => {
             </header>
             <div className={styles.grid}>
                 {pets.map((pet) => (
-                    <div
+                    <button
                         key={pet}
                         className={`${styles.card} ${
                             formController.fields.pet === pet
@@ -37,7 +37,7 @@ export const PetTab = ({ formController }) => {
                             alt={`${pet} pet`}
                         />
                         {pet}
-                    </div>
+                    </button>
                 ))}
             </div>
         </div>
